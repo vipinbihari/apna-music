@@ -1,0 +1,75 @@
+<style>
+.moredrop{
+display:none;
+}
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+
+@media (min-width: 330px)
+.menu-content {
+    min-width: 250px;
+    max-width: 356px;
+    margin: 40px;
+}
+
+.menu-content {
+    position: relative;
+    z-index: 2;
+    max-height: 100%;
+    overflow-y: auto;
+    color: hsl(0,0%,6.7%);
+    background-color: hsl(0,0%,100%);
+padding: 2% 20%;
+}
+.menu-item-button {
+    display: block;
+    font-size: 1.6rem;
+    padding: 12px;
+    text-align: initial;
+    text-transform: unset;
+}
+
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    text-transform: inherit;
+    color: inherit;
+    background: transparent;
+}
+div {
+    display: block;
+}
+
+c3-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+    background-color: hsla(0,0%,6.7%,.8);
+}
+.overlay-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+}
+
+	</style>
