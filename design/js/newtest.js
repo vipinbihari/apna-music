@@ -121,7 +121,7 @@ function musicAjax(id)
 			document.querySelector('.loadmsg').style.display = "none";
 		}
 	};
-	mhttp.open("GET", "https://apnamusic.ml/logic/newyoutubedl.php?id=" + id, true);
+	mhttp.open("GET", "logic/newyoutubedl.php?id=" + id, true);
 	mhttp.send();
 	//MUSIC FUNCTION FOR GETTING THE AUDIO PLAYABLE LINK AND ALSO PLAYING THE MUSIC AND UPDATING PLALIST
 }
@@ -223,7 +223,7 @@ function ajax()
 			document.querySelector('.ajaxload').style.display = 'block';
 		}
 	};
-	xhttp.open("GET", "https://apnamusic.ml/logic/per.php?id=" + filterArray(), true);
+	xhttp.open("GET", "logic/per.php?id=" + filterArray(), true);
 	xhttp.send();
 	//IT IS THE MAIN FUNCTION WHICH IS CALLED WHEN THE WINDWO IS LOADED
 }
@@ -712,7 +712,7 @@ function playNext(id, svgNode)
 
 	};
 
-	playNext.open("GET", "https://apnamusic.ml/logic/newyoutubedl.php?id=" + id, true);
+	playNext.open("GET", "logic/newyoutubedl.php?id=" + id, true);
 	playNext.send();
 
 	console.log('we are processing to add to playnext  ', id);
@@ -827,7 +827,7 @@ function autoPlayIdDetails(id)
 				}
 
 
-				newHttp.open("GET", "https://apnamusic.ml/logic/newyoutubedl.php?id=" + id, true);
+				newHttp.open("GET", "logic/newyoutubedl.php?id=" + id, true);
 				newHttp.send();
 
 
