@@ -121,7 +121,7 @@ function musicAjax(id)
 			document.querySelector('.loadmsg').style.display = "none";
 		}
 	};
-	mhttp.open("GET", "https://apnamusic.ml/newyoutubedl.php?id=" + id, true);
+	mhttp.open("GET", "https://apnamusic.ml/logic/newyoutubedl.php?id=" + id, true);
 	mhttp.send();
 	//MUSIC FUNCTION FOR GETTING THE AUDIO PLAYABLE LINK AND ALSO PLAYING THE MUSIC AND UPDATING PLALIST
 }
@@ -223,7 +223,7 @@ function ajax()
 			document.querySelector('.ajaxload').style.display = 'block';
 		}
 	};
-	xhttp.open("GET", "https://apnamusic.ml/per.php?id=" + filterArray(), true);
+	xhttp.open("GET", "https://apnamusic.ml/logic/per.php?id=" + filterArray(), true);
 	xhttp.send();
 	//IT IS THE MAIN FUNCTION WHICH IS CALLED WHEN THE WINDWO IS LOADED
 }
@@ -332,7 +332,7 @@ function makeSearch(event)
 
 		};
 
-		searchAjax.open('GET', 'serchindex.php?q=' + search + '&maxResults=25', true);
+		searchAjax.open('GET', 'logic/serchindex.php?q=' + search + '&maxResults=25', true);
 		searchAjax.send();
 
 
@@ -604,7 +604,7 @@ function showTrends()
 	};
 
 
-	http.open('GET', 'trend.php', true);
+	http.open('GET', 'logic/trend.php', true);
 	http.send();
 }
 
@@ -641,7 +641,7 @@ function loginPage()
 
 
 	};
-	http.open('GET', 'login.html', true);
+	http.open('GET', 'design/html/login.html', true);
 	http.send();
 
 }
@@ -712,7 +712,7 @@ function playNext(id, svgNode)
 
 	};
 
-	playNext.open("GET", "https://apnamusic.ml/newyoutubedl.php?id=" + id, true);
+	playNext.open("GET", "https://apnamusic.ml/logic/newyoutubedl.php?id=" + id, true);
 	playNext.send();
 
 	console.log('we are processing to add to playnext  ', id);
@@ -763,7 +763,7 @@ function autoPlayIdsFunc(id,nextPageToken)
 		if(nextPageToken != null){
 			id = id +'&pageToken='+nextPageToken;
 		}
-		http.open('GET', 'autoplay.php?id=' + id, true);
+		http.open('GET', 'logic/autoplay.php?id=' + id, true);
 		http.send();
 
 
@@ -827,7 +827,7 @@ function autoPlayIdDetails(id)
 				}
 
 
-				newHttp.open("GET", "https://apnamusic.ml/newyoutubedl.php?id=" + id, true);
+				newHttp.open("GET", "https://apnamusic.ml/logic/newyoutubedl.php?id=" + id, true);
 				newHttp.send();
 
 
@@ -840,7 +840,7 @@ function autoPlayIdDetails(id)
 
 		}
 
-		http.open('GET', 'per.php?id=' + id, true);
+		http.open('GET', 'logic/per.php?id=' + id, true);
 		http.send();
 
 	}
@@ -881,7 +881,7 @@ document.querySelector('.ajaxload').style.display = 'block';
 
 		};
 
-		customTrends.open('GET', 'appleTrends.json', true);
+		customTrends.open('GET', 'other/appleTrends.json', true);
 		customTrends.send();
 
 
