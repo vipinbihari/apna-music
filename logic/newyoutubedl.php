@@ -43,7 +43,7 @@ if($count == 0){
 if(isset($_GET['id'])){
 
 
-$command = shell_exec("youtube-dl --extract-audio -o 'music/%(id)s.%(ext)s' https://www.youtube.com/watch?v={$id}");
+$command = shell_exec("youtube-dl --extract-audio -o '/var/www/html/music/%(id)s.%(ext)s' https://www.youtube.com/watch?v={$id}");
 
 $filter1 = stristr($command, '[ffmpeg]');
 $filter2 = stristr($filter1, 'Deleting', true);
