@@ -31,7 +31,7 @@ $format =$final['format'];
 if($count == 1){
     
     
-echo "https://s3.ap-south-1.amazonaws.com/apnamusic1/{$id}.{$format}";
+echo "music/{$id}.{$format}";
     
 }
 
@@ -43,7 +43,7 @@ if($count == 0){
 if(isset($_GET['id'])){
 
 
-$command = shell_exec("youtube-dl --extract-audio -o '/apnamusic/%(id)s.%(ext)s' https://www.youtube.com/watch?v={$id}");
+$command = shell_exec("youtube-dl --extract-audio -o 'music/%(id)s.%(ext)s' https://www.youtube.com/watch?v={$id}");
 
 $filter1 = stristr($command, '[ffmpeg]');
 $filter2 = stristr($filter1, 'Deleting', true);
@@ -67,7 +67,7 @@ if($update){
     
     //echo 'The data base was inserted successfully';
     
-echo "https://s3.ap-south-1.amazonaws.com/apnamusic1/{$id}.{$finalFilter}";
+echo "music/{$id}.{$finalFilter}";
 
 }
 
