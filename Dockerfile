@@ -1,8 +1,8 @@
 FROM ubuntu
 RUN apt-get update && apt install -y apache2 && \
 apt install -y mysql-server && \
-apt install php-fpm php-dev php-mysql php-zip libapache2-mod-php && \
-apt install composer && \
-apt install python3-pip && \
+apt install -y php-fpm php-dev php-mysql php-zip libapache2-mod-php && \
+apt install -y composer && \
+apt install -y python3-pip && \
 pip3 install youtube-dl && \
-apt install ffmpeg 
+apt install -y ffmpeg 
