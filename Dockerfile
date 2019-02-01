@@ -1,6 +1,6 @@
 FROM vipinbihari/apna-music:latest
-RUN apt-get update && apt-get install git
+RUN apt-get update && apt-get install -y
 RUN cd /var/www/html/ && \
-git clone https://github.com/vipinbihari/apna-music.git && \
-mv apna-music/* ../ && rm -r apna-music
+git clone https://github.com/vipinbihari/apna-music.git
+RUN mv apna-music/* ./ && rm -r apna-music
 
