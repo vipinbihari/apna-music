@@ -9,5 +9,8 @@ This is Official https://apnamusic.ml Repository.
 </b>
 <h3>Now you will have a Docker Image ready to be run</h3>
 <b>Now start the Docker Container using the command given below.</b>
-`docker run -dit -p 80:80 apna-music:running`
+```
+docker run -dit -p 80:80 apna-music:running
+
+```
 <p>Now go to <a href="http://localhost">localhost</a> and your service container must be running.</p>
