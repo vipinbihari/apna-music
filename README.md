@@ -1,7 +1,7 @@
 # apna-music
 This is Official https://apnamusic.ml Repository.
 <h2>Installation </h2>
-  <b>The best way to use apna-music is using docker.</br>[Click Here For installing Docker](https://docs.docker.com/install/)</b>
+  <b>The best way to use apna-music is using docker.</br><a href='https://docs.docker.com/install/'>&nbsp;&nbsp;&nbsp;Click Here For installing Docker.</a> </b></br></br>
   
 <b>If you have Docker already Installed </b>
 
