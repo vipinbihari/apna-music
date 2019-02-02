@@ -5,7 +5,7 @@ This is Official https://apnamusic.ml Repository.
   
 <b>If you have Docker already Installed 
 <br/></b>
-  > docker build -t apna-music:running https://github.com/vipinbihari/apna-music.git
+  > ```docker build -t apna-music:running https://github.com/vipinbihari/apna-music.git```
   <p>Copy and Paste the above command in your terminal.</p>
 <h3>Now you will have a Docker Image ready to be run</h3>
 <b>Now start the Docker Container using the command given below.</b>
