@@ -180,7 +180,7 @@ function filterArray()
 	{
 		console.log('You Are At The End Of The Page');
 	}
-	//FILTERING THE ARRAY IN THE STRING FORMAT FOR ATMOST 5 ELEMENTS AT A TIME    
+	//FILTERING THE ARRAY IN THE STRING FORMAT FOR ATMOST 5 ELEMENTS AT A TIME
 }
 
 //IT IS THE MAIN FUNCTION WHICH IS CALLED WHEN THE WINDWO IS LOADED
@@ -304,8 +304,17 @@ function closeSearch()
 function makeSearch(event)
 {
 	search = document.querySelector('.form .searchbox-input').value;
-	if (search != '')
+	if (search != 'Search Here')
 	{
+  var ID = '';
+  url = search.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+  if(url[2] !== undefined) {
+    ID = url[2].split(/[^0-9a-z_\-]/i);
+    ID = ID[0];
+		musicAjax(ID);
+		return false;
+  }
+
 		closeSearch();
 		row = document.querySelectorAll('.row')[0].innerHTML = '';
 		toHome();
@@ -379,7 +388,7 @@ function saveIds(id)
 
 	window.localStorage.setItem('ids', storageIds);
 	console.log('local storage updated succefully');
-	
+
 	//FOR SAVIG IDS IN LOCAL STOROGE FOR HISTORY
 
 }
@@ -447,9 +456,9 @@ trendingIcon.addEventListener('click', function ()
 	document.querySelector('div .scbrr-tabs a[aria-label="Home"]').setAttribute('aria-selected', 'false');
 
 	trendingIcon.setAttribute('aria-selected', 'true');
-	
+
 	customTrends();
-	
+
 	//showTrends();
 	//EVENT LISTENER WHEN THE HISTORY ICON IS CLICKED
 });
@@ -731,10 +740,10 @@ function toHome()
 
 }
 
-//AUTOPLAY STATUS THIS IS SET BY USER 
+//AUTOPLAY STATUS THIS IS SET BY USER
 autoPlayStatus = 1;
 //THIS FUNCTION RETRIVES THE IDS THAT ARE RELATED TO THE GIVEN ID
-function autoPlayIdsFunc(id,nextPageToken) 
+function autoPlayIdsFunc(id,nextPageToken)
 {
 
 	if (autoPlayStatus != 0)
@@ -754,7 +763,7 @@ function autoPlayIdsFunc(id,nextPageToken)
 				nextAutoPageToken = autoPlayList.nextPageToken;
 				//NEXT DETAIL REQUEST FUNCTIONN
 				autoPlayIdDetails(autoPlayIds.shift());
-				
+
 
 			}
 
@@ -776,7 +785,7 @@ function autoPlayIdsFunc(id,nextPageToken)
 }
 
 
-//THIS FUNCTION RETURN THE DETAILS OF AN AUTOPLAY ID WITH ITS AUDIO SRC 
+//THIS FUNCTION RETURN THE DETAILS OF AN AUTOPLAY ID WITH ITS AUDIO SRC
 //AND THIS ALSO ADD ELEMENT TO PLAYLIST
 function autoPlayIdDetails(id)
 {
@@ -844,7 +853,7 @@ function autoPlayIdDetails(id)
 		http.send();
 
 	}
-//THIS FUNCTION RETURN THE DETAILS OF AN AUTOPLAY ID WITH ITS AUDIO SRC 
+//THIS FUNCTION RETURN THE DETAILS OF AN AUTOPLAY ID WITH ITS AUDIO SRC
 //AND THIS ALSO ADD ELEMENT TO PLAYLIST
 }
 
@@ -887,12 +896,3 @@ document.querySelector('.ajaxload').style.display = 'block';
 
 
 }
-
-
-
-
-
-
-
-
-
