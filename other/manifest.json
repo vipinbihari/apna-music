@@ -3,7 +3,7 @@
   "name": "Apna Music",
   "icons": [
     {
-      "src":"design/images/pwaLogo.png",
+      "src":"../design/images/pwaLogo.png",
       "sizes": "300x300",
       "type": "image/png"
     }
