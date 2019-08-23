@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin:*");
 $id = $_GET['id'];
-$get="https://www.googleapis.com/youtube/v3/videos?id={$id}&part=contentDetails,statistics,snippet&key=AIzaSyB2oMXNhlDjwemhqE7xaOYp1bpIB08Kx2E";
+$get="https://www.googleapis.com/youtube/v3/videos?id={$id}&part=contentDetails,statistics,snippet&key=AIzaSyDFiLbujgQtWGIWQudc2q-BuuFJlzsxUEE";
 echo file_get_contents($get);
 
 /*
