@@ -457,9 +457,9 @@ trendingIcon.addEventListener('click', function ()
 
 	trendingIcon.setAttribute('aria-selected', 'true');
 
-	customTrends();
+	//customTrendsFunc();
 
-	//showTrends();
+	showTrends();
 	//EVENT LISTENER WHEN THE HISTORY ICON IS CLICKED
 });
 
@@ -473,8 +473,8 @@ accountIcon.addEventListener('click', function ()
 	document.querySelector('div .scbrr-tabs a[aria-label="Home"]').setAttribute('aria-selected', 'false');
 
 	accountIcon.setAttribute('aria-selected', 'true');
+	//Loadin the login Page Now
 	loginPage();
-	//EVENT LISTENER WHEN THE ACCOUNT ICON IS CLICKED
 });
 
 
@@ -613,7 +613,7 @@ function showTrends()
 	};
 
 
-	http.open('GET', 'logic/trend.php', true);
+	http.open('GET', 'logic/youtube_trends.php', true);
 	http.send();
 }
 
@@ -640,6 +640,7 @@ function loginPage()
 		{
 			document.querySelector('.row').innerHTML = this.responseText;
 
+			renderButton();
 		}
 		if (this.readyState == 4)
 		{
@@ -857,7 +858,7 @@ function autoPlayIdDetails(id)
 //AND THIS ALSO ADD ELEMENT TO PLAYLIST
 }
 
-function customTrends(){
+function customTrendsFunc(){
 
 
 row = document.querySelectorAll('.row')[0].innerHTML = '';

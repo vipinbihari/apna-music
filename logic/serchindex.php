@@ -22,7 +22,7 @@ if (isset($_GET['q']) && isset($_GET['maxResults'])) {
    * {{ Google Cloud Console }} <{{ https://cloud.google.com/console }}>
    * Please ensure that you have enabled the YouTube Data API for your project.
    */
-  $DEVELOPER_KEY = 'AIzaSyDFiLbujgQtWGIWQudc2q-BuuFJlzsxUEE';
+  $DEVELOPER_KEY = 'AIzaSyD6zCD1iHr4VrAHelLSZpbcToqoRk0-iOQ';
 
   $client = new Google_Client();
   $client->setDeveloperKey($DEVELOPER_KEY);

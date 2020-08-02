@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="other/manifest.json">
+<meta name="google-signin-client_id" content="514907710858-9gat0gqh5m1g7si60j4k8icgrv0jtgo0.apps.googleusercontent.com">
 <meta property="og:image" content="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2017/09/youtube-to-mp3-1024x576-1024x576.jpg"/>
 <!-- BOTTOM CSS FILE IS INCLUDED FOR HEADER OF THIS SITE -->
  <?php include 'design/css/ytheader.css'; ?>
@@ -12,6 +13,39 @@
 <?php include 'design/css/moredrop.css'; ?>
 <!-- BOTTOM CSS FILE INCLUDE COMMON CSS FOR THE PAGE WRITTEN EXCLUSIVELY -->
 <?php include 'design/css/common.css'; ?>
+
+<style>
+#profile .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+#profile .title {
+  color: grey;
+  font-size: 18px;
+}
+
+#profile button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
 </head>
 <body>
 <?php include 'design/html/ytheader.html'; ?>
@@ -30,7 +64,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     console.log("Will the service worker register?");
-    navigator.serviceWorker.register('other/service-worker.js')
+    navigator.serviceWorker.register('service-worker.js')
       .then(function(reg){
         console.log("Yes, it did.");
       }).catch(function(err) {
@@ -38,6 +72,47 @@
       });
   }
 </script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script> function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+	'theme': 'dark',
+	'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+}
+
+    function onFailure(error) {
+      console.log(error);
+    }
+
+function onSuccess(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+  document.querySelector('.row').innerHTML = '';
+  document.querySelector('.row').innerHTML ='<div id="profile"><div class="card"><img src="'+profile.getImageUrl()+'" alt="" style="width:50%"><h1>'+profile.getName()+'</h1><p class="title">'+profile.getEmail()+'</p><p>UserId: '+profile.getId()+'</p><p><button onclick="signOut();">Logout</button></p>'
+
+
+}
+
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+
+loginPage();
+}
+</script>
+
 </html>
 
 

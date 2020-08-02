@@ -31,7 +31,7 @@ $format =$final['format'];
 if($count == 1){
     
     
-echo "music/{$id}.{$format}";
+echo "/music/{$id}.{$format}";
     
 }
 
